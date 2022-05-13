@@ -5,13 +5,18 @@ output_file <- file.path('outputs', 'summary.csv')
 
 data <- read.csv(input_file, header = TRUE)
 
+mean_gradient <- function(data) {
+    time_start <- data$time[1]
+    time_end <- data$time[nrow(data)]
+    value_start <- data$value[1]
+    value_end <- data$value[nrow(data)]
+    (value_end - value_start) / (time_end - time_start)
+}
+
 summary_statistics <- list(
     mean = mean(data$value),
     median = median(data$value),
-    minimum = min(data$value),
-    maximum = max(data$value),
-    first = data$value[1],
-    last = data$value[nrow(data)])
+    mean_gradient = mean_gradient(data))
 
 summary_table <- data.frame(
     statistic = names(summary_statistics),
