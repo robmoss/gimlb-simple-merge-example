@@ -1,4 +1,7 @@
-statistic,value
-mean,5
-median,5
-mean_gradient,2
+data_set,statistic,value
+first_data_set.csv,mean,5
+first_data_set.csv,median,5
+first_data_set.csv,mean_gradient,2
+second_data_set.csv,mean,3
+second_data_set.csv,median,3
+second_data_set.csv,mean_gradient,-1
